@@ -1,0 +1,39 @@
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/htdocs/bundles/
+/htdocs/uploads/*
+/htdocs/uploads/*
+/htdocs/_dist/images/project-victory/videos/*
+/var/
+/vendor/
+/node_modules/
+/ftp_files/
+/ftp_files/*
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> symfony/web-server-bundle ###
+/.web-server-pid
+###< symfony/web-server-bundle ###
+/htdocs/ckeditor/config.js
+/.env
+.env
+/htdocs/.htaccess
+###< homolog server ###
+.bash_history
+.bash_profile
+.bashrc
+logs
+composer.lock
+symfony.lock
+.DS_Store
+node_modules/
+/package-lock.json
+package-lock.json
+*.lock
