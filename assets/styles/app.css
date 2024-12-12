@@ -1,0 +1,39 @@
+body {
+    background-color: white;
+}
+
+    .login-form {
+        width: 400px;
+    }
+
+    .btn-block {
+        width: 100%;
+        border-radius: 10px;
+        background-color: black;
+        border: none;
+    }
+
+    .btn-block:hover{
+        background-color: #FF6F61;
+    }
+
+    .security-form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 100px;
+        gap: 60px;
+    }
+
+    .logo img {
+        width: 200px;
+    }
+
+    .form-control {
+        margin-bottom: 12px; 
+    }
+    
+    .terms {
+        margin-bottom: 20px;
+    }

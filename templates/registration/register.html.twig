@@ -3,19 +3,28 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+    <div class="container security-form">
 
-    {{ form_errors(registrationForm) }}
+        <div class="logo">
+            <img src="/images/logo.svg" alt="Logo">
+        </div> 
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.firstName) }}
-        {{ form_row(registrationForm.lastName) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+        <div class="login-form">
+            <h1 class="h4 mb-4"> Register</h1>
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+            {{ form_errors(registrationForm) }}
+
+            {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.email, {'attr':{'class': 'form form-control', 'placeholder':"example123@gmail.com"}}) }}
+                {{ form_row(registrationForm.firstName, {'attr':{'class': 'form form-control'}}) }}
+                {{ form_row(registrationForm.lastName, {'attr':{'class': 'form form-control'}}) }}
+                {{ form_row(registrationForm.plainPassword, {'attr':{'class': 'form form-control'}}, {
+                    label: 'Password'
+                }) }}
+                {{ form_row(registrationForm.agreeTerms, {'attr':{'class': 'terms mx-2'}}) }}
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit" class="btn">Register</button>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
 {% endblock %}
