@@ -2,25 +2,28 @@
 
 namespace App\Repository;
 
-use App\Entity\User;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Persistence\ManagerRegistry;
-use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
-use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
+use App\Entity\User; // Importa a classe User, que representa a entidade do banco de dados.
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository; // Classe base para repositórios no Symfony.
+use Doctrine\Persistence\ManagerRegistry; // Gerencia o acesso ao EntityManager para trabalhar com entidades.
+use Symfony\Component\Security\Core\Exception\UnsupportedUserException; // Exceção lançada para tipos de usuário não suportados.
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface; // Interface para usuários autenticados com senha.
+use Symfony\Component\Security\Core\User\PasswordUpgraderInterface; // Interface para definir métodos de atualização de senha.
+
 
 /**
  * @extends ServiceEntityRepository<User>
+ * * Declara que este repositório é especializado para a entidade User.
  */
 class UserRepository extends ServiceEntityRepository implements PasswordUpgraderInterface
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, User::class);
+        parent::__construct($registry, User::class); // Inicializa a classe pai, informando que este repositório trabalha com User.
     }
 
     /**
-     * Used to upgrade (rehash) the user's password automatically over time.
+     * Este método serve para atualizar automaticamente a senha do usuário,
+     * re-hashando (recalculando) a senha quando necessário.
      */
     public function upgradePassword(PasswordAuthenticatedUserInterface $user, string $newHashedPassword): void
     {
@@ -29,8 +32,8 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         }
 
         $user->setPassword($newHashedPassword);
-        $this->getEntityManager()->persist($user);
-        $this->getEntityManager()->flush();
+        $this->getEntityManager()->persist($user); // Prepara o EntityManager para salvar o objeto atualizado.
+        $this->getEntityManager()->flush(); // Confirma as alterações no banco de dados.
     }
 
     //    /**

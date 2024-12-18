@@ -21,10 +21,10 @@
                 </div>
             {% endif %}
 
-            <h1 class="h4 mb-3 font-weight-normal">Please sign in</h1>
-            <label for="inputEmail">Email</label>
+            <h1 class="h4 mb-4 font-weight-normal">Please sign in</h1>
+            <label class="mb-3" for="inputEmail">Email</label>
             <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-            <label for="inputPassword">Password</label>
+            <label class="mb-3" for="inputPassword">Password</label>
             <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
             <input type="hidden" name="_csrf_token"

@@ -16,5 +16,9 @@
         "dev": "encore dev",
         "watch": "encore dev --watch",
         "build": "encore production --progress"
+    },
+    "dependencies": {
+        "jquery": "^3.7.1",
+        "jquery-confirm": "^3.3.4"
     }
 }

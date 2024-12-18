@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categories{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+       <br> <h1>Categories</h1> <br><br>
+        <table class="table">
+            <tr>
+                <th>id</th>
+                <th>category name</th>
+                <th>action</th>
+            </tr>
+
+            <style>
+                .btn-outline-dark:hover {
+                    background-color: #FF6F61;
+                    border: 1px solid #FF6F61;
+                }
+            </style>
+
+            {% for category in categories %}
+                <tr>
+                    <td>{{ category.id }}</td>
+                    <td>{{ category.name }}</td>
+                    <td>
+                        <a href="{{ path('app_category_update',{'id':category.id}) }}" class="btn btn-primary btn-block w-25"> Edit </a> |
+                        <a href="{{ path('app_category_delete',{'id':category.id}) }}" class="btn btn-light w-25 delete-link"> Delete </a>
+                    </td>
+                </tr>
+                {% else %}
+                <p> There are no categories to display </p>
+            {% endfor %}
+        </table>
+        <a href="{{ path('app_category_new')}}" class="btn btn-outline-dark mt-5 btn-lg"
+        > Create new category </a>
+    </div>
+{% endblock %}
+ 
