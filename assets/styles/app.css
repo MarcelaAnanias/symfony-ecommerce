@@ -9,7 +9,7 @@ body {
     .btn-block {
         width: 100%;
         border-radius: 10px;
-        background-color: black;
+        background-color: #1E2832;
         border: none;
     }
 
@@ -22,12 +22,12 @@ body {
         align-items: center;
         flex-direction: column;
         width: 100%;
-        margin-top: 100px;
+        margin-top: 80px;
         gap: 60px;
     }
 
     .logo img {
-        width: 200px;
+        width: 215px;
     }
 
     .form-control {
