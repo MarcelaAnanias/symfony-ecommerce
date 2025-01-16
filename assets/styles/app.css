@@ -22,12 +22,12 @@ body {
         align-items: center;
         flex-direction: column;
         width: 100%;
-        margin-top: 80px;
+        margin-top: 60px;
         gap: 60px;
     }
 
     .logo img {
-        width: 215px;
+        width: 200px;
     }
 
     .form-control {
@@ -37,3 +37,44 @@ body {
     .terms {
         margin-bottom: 20px;
     }
+
+    #logo-nav {
+        width: 150px;
+        height: 30px;
+        display: flex;
+    }
+
+    .btn-confirm {
+        width: 25%;
+        border-radius: 10px;
+        background-color: #1E2832;
+        border: none;
+        color: white;
+    }
+
+    .btn-confirm:hover{
+        background-color: #FF6F61;
+        color: white;
+    }
+
+    .jconfirm .jconfirm-box .jconfirm-title {
+        font-size: 18px !important; 
+        font-weight: 500;
+    }
+
+    .jconfirm .jconfirm-box .jconfirm-icon-c {
+        font-size: 18px !important; 
+    }
+
+    .logout {
+        display: flex;
+        justify-content: center;
+        font-size: 16px; 
+        font-weight: 400;
+        gap: 5px;
+        margin-bottom: 50px !important;
+        margin-top: -30px;
+    }
+
+
+

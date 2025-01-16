@@ -20,17 +20,48 @@ $(document).ready(function () {
 
         // Exibe a confirmação
         $.confirm({
-            title: 'Tem certeza que deseja excluir?',
-            content: 'Essa é uma ação permanente e não poderá ser desfeita.',
+            theme: 'material',
+            icon: 'fas fa-exclamation-triangle',
+            title: 'Are you sure you want to delete?',
+            content: 'This is a permanent action and cannot be undone.',
             buttons: {
-                Confirmar: {
-                    btnClass: 'btn-dark',
+                Confirm: {
+                    btnClass: 'btn-default ',
                     action: function () {
                         window.location.href = url; // Redireciona para a exclusão
                     }
                 },
-                Cancelar: {
-                    btnClass: 'btn-red',
+                Cancel: {
+                    btnClass: 'btn-confirm',
+                    action: function () {
+                    }
+                }
+            }
+        });
+    });
+});
+
+$(document).ready(function () {
+    $('.delete-editor').on('click', function (e) {
+        e.preventDefault(); // Impede a navegação imediata
+
+        const url = $(this).attr('href'); // Pega o link de exclusão
+
+        // Exibe a confirmação
+        $.confirm({
+            theme: 'material',
+            icon: 'fas fa-exclamation-triangle',
+            title: 'Remove Editor Role',
+            content: 'Are you sure you want to remove the Editor role from this user?',
+            buttons: {
+                Confirm: {
+                    btnClass: 'btn-default',
+                    action: function () {
+                        window.location.href = url; // Redireciona para a exclusão
+                    }
+                },
+                Cancel: {
+                    btnClass: 'btn-confirm',
                     action: function () {
                     }
                 }
