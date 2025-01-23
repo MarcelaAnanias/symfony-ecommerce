@@ -1,0 +1,16 @@
+{{ form_start(form) }}
+    <label for=""> Name </label><br>
+    {{ form_widget(form.name, {'attr':{'class': 'w-50 form form-control'}})}}
+
+
+    <label for=""> Description </label><br>
+    {{ form_widget(form.description, {'attr':{'class': 'w-50 form form-control'}})}}
+
+    <label for=""> Price </label><br>
+    {{ form_widget(form.price, {'attr':{'class': 'w-25 form form-control', 'placeholder': '0.00'}})}}
+
+    <label for=""> Subcategory </label><br>
+    {{ form_widget(form.subCategories, {'attr':{'class': 'w-25 form form-control'}})}}
+
+    <button class="btn btn-outline-dark mt-3" style=" width: 150px;">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

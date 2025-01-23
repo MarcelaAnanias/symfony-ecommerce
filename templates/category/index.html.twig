@@ -22,7 +22,8 @@
                     <td>{{ category.name }}</td>
                     <td>
                         <a href="{{ path('app_category_update',{'id':category.id}) }}" class="btn btn-light w-25"> Edit </a> |
-                        <a href="{{ path('app_category_delete',{'id':category.id}) }}" class="btn btn-primary btn-block w-25 delete-link"> Delete </a>
+                        <a href="{{ path('app_category_delete',{'id':category.id}) }}" class="btn btn-primary btn-block w-25 delete-link" data-type="url"
+                            > Delete </a>
                     </td>
                 </tr>
                 {% else %}

@@ -76,5 +76,10 @@ body {
         margin-top: -30px;
     }
 
+    .btn-show{
+        display: flex;
+        flex-direction: column;
+    }
+
 
 

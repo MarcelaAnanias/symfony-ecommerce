@@ -5,6 +5,8 @@
 {% block body %}
 <div class="container">
 
+    {% include "layout/_flash_message_html.twig" %}
+
     <br><br><h2>Subcategory</h2><br>
 
     <table class="table">
@@ -24,7 +26,8 @@
                     <td>{{ sub_category.category.name }}</td>
                     <td>
                         <a href="{{ path('app_sub_category_edit', {'id': sub_category.id}) }}" class="btn btn-light w-25"> Edit </a> |
-                        <a href="{{ path('app_sub_category_delete', {'id': sub_category.id}) }}" class="btn btn-primary btn-block w-25 delete-link"> Delete </a>
+                        <a href="{{ path('app_sub_category_delete', {'id': sub_category.id}) }}" class="btn btn-primary btn-block w-25 delete-link" data-type="url"
+                            > Delete </a>
                     </td>
                 </tr>
             {% else %}
