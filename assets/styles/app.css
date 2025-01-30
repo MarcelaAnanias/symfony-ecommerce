@@ -80,6 +80,13 @@ body {
         display: flex;
         flex-direction: column;
     }
+    
+
+    .dropdown-item:hover {
+        background-color: #FF6F61;
+        border: 1px solid #FF6F61;
+        color: #ffffff;
+      }
 
 
 

@@ -5,11 +5,11 @@
 {% block body %}
 <div class="container">
 
-    <br><h2> New product </h2><br><br>
+    <br><h2 class= "mb-5"> New product </h2>
 
     {{ include('product/_form.html.twig') }}
 
-    <a href="{{ path('app_product_index') }}" class="btn btn-light mt-3" style=" width: 150px;" > Back to List </a>
+    <a href="{{ path('app_product_index') }}" class="btn btn-primary btn-block mt-3" style=" width: 150px;" > Back to List </a>
 
 </div>
 {% endblock %}
