@@ -39,9 +39,9 @@
                 {% if ("ROLE_ADMIN" in user.roles) == false %}
                    
                     {% if ("ROLE_EDITOR" in user.roles) == false %}
-                        <a class="btn btn-light" style="width: 200px;" href="{{path('app_user_to_editor', {'id':user.id})}}"> Become a Customer </a> |
+                        <a class="btn btn-light" style="width: 200px;" href="{{path('app_user_to_editor', {'id':user.id})}}"> Become a Editor </a> |
                     {% else %}
-                        <a class="btn btn-light delete-editor" style="width: 200px;" href="{{path('app_user_remove_editor_role', {'id':user.id})}}"> Remove Customer role </a> |
+                        <a class="btn btn-light delete-editor" style="width: 200px;" href="{{path('app_user_remove_editor_role', {'id':user.id})}}"> Remove Editor role </a> |
                     {% endif %}
 
                     <a class="btn btn-primary btn-block delete-link" style="width: 100px;" data-type="link" href="{{path('app_user_remove', {'id':user.id})}}">Delete</a>

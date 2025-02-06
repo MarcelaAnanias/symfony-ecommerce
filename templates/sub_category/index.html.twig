@@ -13,9 +13,9 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Subcategory name</th>
+                <th>Subcategory Name</th>
                 <th>Category</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -25,7 +25,7 @@
                     <td>{{ sub_category.name }}</td>
                     <td>{{ sub_category.category.name }}</td>
                     <td>
-                        <a href="{{ path('app_sub_category_edit', {'id': sub_category.id}) }}" class="btn btn-light w-25"> Edit </a> |
+                        <a href="{{ path('app_sub_category_edit', {'id': sub_category.id}) }}" class="btn btn-light w-25"> Edit </a> 
                         <a href="{{ path('app_sub_category_delete', {'id': sub_category.id}) }}" class="btn btn-primary btn-block w-25 delete-link" data-type="url"
                             > Delete </a>
                     </td>
@@ -38,8 +38,8 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_sub_category_new') }}" class="btn btn-outline-dark mt-5 mb-5 btn-lg"
-    > Create new </a>
+    <a href="{{ path('app_sub_category_new') }}" class="btn btn-coral mt-5 mb-5 btn-lg"
+    > Create New </a>
     
 </div>
     

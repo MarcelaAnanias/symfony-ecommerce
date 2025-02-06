@@ -4,44 +4,64 @@
 
 {% block body %}
 
-<div class="container">
-
-    {% include "layout/_flash_message_html.twig" %}
-
-    <br><h2>Product</h2><br><br>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for product in products %}
-            <tr>
-                <td>{{ product.id }}</td>
-                <td>{{ product.name }}</td>
-                <td>{{ product.description }}</td>
-                <td>{{ '$' ~ product.price|number_format(2, '.') }}</td>
-                <td>
-                    <a href="{{ path('app_product_show', {'id': product.id}) }}" class="btn btn-light w-25"> Show </a>
-                    <a href="{{ path('app_product_edit', {'id': product.id}) }}" class="btn btn-primary btn-block w-25"> Edit </a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5"> No records found </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_product_new') }}" class="btn btn-outline-dark mt-5 btn-lg" >Create new</a>
-
-</div>
+    <div class="container">
+    
+        <br><h2>Product</h2><br><br>
+        {% include "layout/_flash_message_html.twig" %}
+    
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th style="width: 260px;">Name</th>
+                    <th style="width: 360px;">Description</th>
+                    <th style="width: 210px;">Stock</th>
+                    <th style="width: 140px;">Price</th>
+                    <th style="width: 250px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for product in products %}
+                <tr>
+                    <td>{{ product.id }}</td>
+                    <td>
+                        {% if product.name|length <= 27 %}
+                            {{product.name|slice(0, 27)}}
+                        {% elseif product.name|length >= 28 %}
+                            {{ product.name|slice(0,27)}}...
+                        {% endif %}
+                    </td>
+                    <td style=" padding: 8px 20px 8px 8px">
+                        {% if product.description|length < 35 %}
+                            {{product.description|slice(0, 35)}}
+                        {% elseif product.description|length > 36 %}
+                            {{ product.description|slice(0,35)}}...
+                        {% endif %}
+                     </td>
+                     <td>
+                        {% if product.stock > 0 %}
+                            {{product.stock}}
+                        {% else %}
+                            <span class="text-danger"> Product not available </span>
+                        {% endif %}
+                     </td>
+                    <td>{{ '$' ~ product.price|number_format(2, '.') }}</td>
+                    <td class="btn-product-i">
+                        <a href="{{ path('app_product_show', {'id': product.id}) }}" class="btn btn-light" style=" width: 90px;"> Show </a> 
+                        <a href="{{ path('app_product_edit', {'id': product.id}) }}" class="btn btn-primary btn-block" style=" width: 90px;"> Edit </a> 
+                        <a href="{{ path('app_product_stock', {'id': product.id}) }}" class="btn btn-outline-dark" style=" width: 130px">Adjust Stock</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5"> No records found </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    
+        <a href="{{ path('app_product_new') }}" class="btn btn-coral mt-5 mb-5 btn-lg" >Create New</a>
+    
+    </div>
 
 {% endblock %}

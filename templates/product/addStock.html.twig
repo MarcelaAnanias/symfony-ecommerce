@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Adjust stock {% endblock %}
+
+{% block body %}
+
+    <div class="container"> 
+
+        <br><br><h2>Adjust stock: {{ product.name }}</h2><br>
+        {% include "layout/_flash_message_html.twig" %}
+
+        {{ form_start(form) }}
+
+            <label for=""> Quantity </label><br>
+            {{ form_widget(form.quantity, {'attr':{'class': 'w-25 form form-control'}})}}      
+            
+            <button class="btn btn-primary btn-block mt-3" style=" width: 155px; height: 40px;">{{ button_label|default('Save') }}</button>
+        {{ form_end(form) }}
+
+        <a href="{{ path('app_product_index') }}" class="btn btn-outline-dark mt-3 mb-3" style=" width: 150px;"> Back to List </a>
+
+    
+    </div>
+
+{% endblock %}

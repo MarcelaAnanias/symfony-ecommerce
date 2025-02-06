@@ -4,15 +4,15 @@
 
 {% block body %}
 
-<div class="container">
-
-    <br><h2 class=" mb-4 ">Edit Product</h2>
-
-    {{ include('product/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('app_product_index') }}" class="btn btn-light mt-3 mb-3" style=" width: 150px;"> Back to List </a>
-
-    {{ include('product/_delete_form.html.twig') }}
-
-</div>
+    <div class="container">
+    
+        <br><h2 class=" mb-4 ">Edit Product</h2>
+    
+        {{ include('product/_form_update.html.twig', {'button_label': 'Update'}) }}
+    
+        <a href="{{ path('app_product_index') }}" class="btn btn-light mt-3 mb-3" style=" width: 150px;"> Back to List </a>
+    
+        {{ include('product/_delete_form.html.twig') }}
+    
+    </div>
 {% endblock %}

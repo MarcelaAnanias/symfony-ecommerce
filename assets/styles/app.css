@@ -17,6 +17,18 @@ body {
         background-color: #FF6F61;
     }
 
+    .btn-coral {
+        border: 1px solid #FF6F61;
+        background-color: #FF6F61;
+        color: white;
+    }
+
+    .btn-coral:hover{
+        border: 1px solid #212529;
+        background-color: #fff;
+        color: #212529;
+    }
+
     .security-form {
         display: flex;
         align-items: center;
@@ -87,6 +99,14 @@ body {
         border: 1px solid #FF6F61;
         color: #ffffff;
       }
+
+      .btn-product-i {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+      }
+
+    
 
 
 

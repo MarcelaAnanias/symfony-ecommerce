@@ -12,8 +12,8 @@
         <table class="table">
             <tr>
                 <th>Id</th>
-                <th>Category name</th>
-                <th>action</th>
+                <th>Category Name</th>
+                <th>Action</th>
             </tr>
 
             {% for category in categories %}
@@ -21,17 +21,16 @@
                     <td>{{ category.id }}</td>
                     <td>{{ category.name }}</td>
                     <td>
-                        <a href="{{ path('app_category_update',{'id':category.id}) }}" class="btn btn-light w-25"> Edit </a> |
-                        <a href="{{ path('app_category_delete',{'id':category.id}) }}" class="btn btn-primary btn-block w-25 delete-link" data-type="url"
-                            > Delete </a>
+                        <a href="{{ path('app_category_update',{'id':category.id}) }}" class="btn btn-light w-25"> Edit </a> 
+                        <a href="{{ path('app_category_delete',{'id':category.id}) }}" class="btn btn-primary btn-block w-25 delete-link" data-type="url"> Delete </a>
                     </td>
                 </tr>
                 {% else %}
                 <p> There are no categories to display </p>
             {% endfor %}
         </table>
-        <a href="{{ path('app_category_new')}}" class="btn btn-outline-dark mt-5 btn-lg"
-        > Create new category </a>
+        <a href="{{ path('app_category_new')}}" class="btn btn-coral mt-5 btn-lg"
+        > Create New Category </a>
     </div>
 {% endblock %}
  

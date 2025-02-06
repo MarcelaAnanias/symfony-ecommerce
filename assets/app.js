@@ -100,3 +100,25 @@ $(document).ready(function () {
         });
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".date-time").forEach(function (element) {
+        let dateTime = new Date(element.dataset.datetime);
+
+        let formattedDate = dateTime.toLocaleDateString(navigator.language, {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric'
+        });
+
+        let formattedTime = dateTime.toLocaleTimeString(navigator.language, {
+            hour: 'numeric',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        });
+
+        element.textContent = `${formattedDate} ${formattedTime}`;
+    });
+});
