@@ -1,55 +1,69 @@
-<nav class="navbar navbar-expand-lg" style="background-color: rgba(0, 0, 0, 0.05);">
+<nav class="navbar navbar-expand-lg" style="background-color: rgba(30, 40, 50, 0.05);">
   <div class="container-fluid" id="container-nav">
-    <a class="navbar-brand" href="#">
-      <img id="logo-nav" src="/images/nav.svg" alt="Logo">
-    </a>
-    <div class="collapse navbar-collapse" id="navbarSroll">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{path('app_home')}}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-
-        {% if is_granted("ROLE_ADMIN") %}
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Admin
-          </a>
-          
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{ path('app_category')}}">Category</a></li>
-            <li><a class="dropdown-item" href="{{ path('app_category_new')}}">Create category</a></li>
-            <li><a class="dropdown-item" href="{{ path('app_sub_category_index')}}">Subcategory</a></li>
-            <li><a class="dropdown-item" href="{{ path('app_sub_category_new')}}">Create subcategory</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{{ path('app_user')}}">Users</a></li>
-          </ul>
-        </li>
-        {% endif %}
-
-        {% if is_granted("ROLE_EDITOR") %}
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Product
-          </a>
-          
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{ path('app_product_index')}}">Product</a></li>
-            <li><a class="dropdown-item" href="{{ path('app_product_new')}}">Create product</a></li>
-          </ul>
-        </li>
-        {% endif %}
-
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <img src="/images/search.svg" alt="Lupa" width="20">
-      </form>
+    <div class="navbar-coral">
+      <div class="nav-top">
+        <form class="" role="search" id="search">
+          <img class="icon" src="/images/lupa.png" alt="Lupa">
+          <input class="" type="search" placeholder="Search here" aria-label="Search">
+        </form>
+        <a class="" href="#">
+          <img id="logo-nav" src="/images/nav.svg" alt="Logo">
+        </a>
+        <div class="account">
+          {% if app.user %}
+            <a class="nav-user"> Welcome, {{ app.user.firstName }}!</a>
+            <a class="nav-logout" href="{{ path('app_logout') }}">Logout</a>
+          {% else %}
+            <a class="nav-login" href="{{ path('app_login') }}">Login</a>
+            <a class="nav-register" href="{{ path('app_register') }}">Register</a>
+          {% endif %}
+        </div>
+      </div>
+      <img class="line-nav" src="/images/line.png">
+      <div class="collapse navbar-collapse" id="navbarSroll">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{path('app_home')}}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+  
+          {% if is_granted("ROLE_ADMIN") %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Admin
+            </a>
+            
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{ path('app_category')}}">Category</a></li>
+              <li><a class="dropdown-item" href="{{ path('app_category_new')}}">Create category</a></li>
+              <li><a class="dropdown-item" href="{{ path('app_sub_category_index')}}">Subcategory</a></li>
+              <li><a class="dropdown-item" href="{{ path('app_sub_category_new')}}">Create subcategory</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="{{ path('app_user')}}">Users</a></li>
+            </ul>
+          </li>
+          {% endif %}
+  
+          {% if is_granted("ROLE_EDITOR") %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Product
+            </a>
+            
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{ path('app_product_index')}}">Product</a></li>
+              <li><a class="dropdown-item" href="{{ path('app_product_new')}}">Create product</a></li>
+            </ul>
+          </li>
+          {% endif %}
+  
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </nav>

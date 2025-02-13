@@ -1,32 +1,15 @@
+/* ===========================
+   GLOBAL STYLES
+   =========================== */
 body {
     background-color: white;
 }
 
+/* ===========================
+   FORMULARIOS
+   =========================== */
     .login-form {
         width: 400px;
-    }
-
-    .btn-block {
-        width: 100%;
-        border-radius: 10px;
-        background-color: #1E2832;
-        border: none;
-    }
-
-    .btn-block:hover{
-        background-color: #FF6F61;
-    }
-
-    .btn-coral {
-        border: 1px solid #FF6F61;
-        background-color: #FF6F61;
-        color: white;
-    }
-
-    .btn-coral:hover{
-        border: 1px solid #212529;
-        background-color: #fff;
-        color: #212529;
     }
 
     .security-form {
@@ -34,50 +17,334 @@ body {
         align-items: center;
         flex-direction: column;
         width: 100%;
-        margin-top: 60px;
-        gap: 60px;
+        margin-top: 100px;
+        gap: 80px;
     }
 
-    .logo img {
-        width: 200px;
+    .register-form{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 50px;
+        gap: 80px;
     }
 
     .form-control {
         margin-bottom: 12px; 
     }
+
+    /* ===========================
+   BOTÕES GERAIS
+   =========================== */
+    .btn-block, 
+    .btn-block-coral,
+    .btn-login,
+    .btn-register,
+    .btn-confirm {
+        width: 100%;
+        border-radius: 10px;
+        border: none;
+        color: white;
+    }
     
+    /* ===========================
+       BOTÃO LOGIN E SIGN UP
+       =========================== */
+
+       .btn-login {
+            background-color: #1E2832;
+       }
+
+       .btn-login:hover {
+            border: 2px solid #1E2832;
+            background-color: transparent;
+            color: #1E2832;
+       }
+
+       .btn-register {
+            background-color: #FF6F61;
+       }
+
+       .btn-register:hover {
+            border: 2px solid #FF6F61;
+            background-color: transparent;
+            color: #FF6F61;
+       }
+
+    /* ===========================
+       BOTÃO PRETO PADRÃO
+       =========================== */
+
+    .btn-block, 
+    .btn-confirm {
+        background-color: #1E2832;
+    }
+
+    .btn-block:hover, 
+    .btn-confirm:hover {
+        background-color: #FF6F61;
+    }
+
+    /* ===========================
+       BOTÃO CORAL PADRÃO
+       =========================== */
+    .btn-block-coral {
+        background-color: #FF6F61;
+    }
+
+    .btn-block-coral:hover {
+        background-color: #1E2832;
+    }
+
+    /* ===========================
+       BOTÃO "SHOP"
+       =========================== */
+    .btn-shop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 213px;
+        height: 65px;
+        background-color: #1E2832;
+        color: #fff;
+        font-size: 25px;
+        text-decoration: none;
+        gap: 10px;
+        border: none;
+    }
+
+    .btn-shop:hover {
+        background-color: #FF6F61;
+    }
+
+    /* ===========================
+       BOTÃO CORAL COM BORDA
+       =========================== */
+    .btn-coral {
+        border: 2px solid #FF6F61;
+        background-color: #FF6F61;
+        color: white;
+        text-decoration: none;
+    }
+
+    .btn-coral:hover {
+        border: 2px solid #212529;
+        background-color: transparent;
+        color: #212529;
+    }
+
+    /* ===========================
+       BOTÕES DE LAYOUT
+       =========================== */
+    .btn-show {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn-product-i {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    /* ===========================
+   LOGO
+   =========================== */
+    .logo img {
+        width: 230px;
+    }
+
+    #logo-nav {
+        width: 185px;
+        height: 36px;
+        display: flex;
+    }
+
+    /* ===========================
+       TERMOS & LINHA SEPARADORA
+       =========================== */
     .terms {
         margin-bottom: 20px;
     }
 
-    #logo-nav {
-        width: 150px;
-        height: 30px;
+    .line-nav {
+        margin-top: 10px;
+    }
+
+    /* ===========================
+       NAVBAR PRINCIPAL
+       =========================== */
+    #navbarSroll {
+        width: 100%;
         display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: end;
     }
 
-    .btn-confirm {
-        width: 25%;
-        border-radius: 10px;
-        background-color: #1E2832;
-        border: none;
-        color: white;
+    .navbar-coral {
+        width: 100%;
+        height: 113px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
 
-    .btn-confirm:hover{
+    /* ===========================
+       NAVEGAÇÃO
+       =========================== */
+    .navbar-nav {
+        display: flex;
+        justify-content: space-around; 
+        width: 55rem; 
+    }
+
+    .nav-link {
+        padding: 0;
+        font-size: 16px;
+    }
+
+    .nav-top {
+        width: 90%;
+        height: 59px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-link:hover{
+        color: #FF6F61;
+    }
+
+    .nav-link.active:hover{
+        color: #FF6F61;
+    }
+    
+    .dropdown-item:hover {
         background-color: #FF6F61;
-        color: white;
+        border: 1px solid #FF6F61;
+        color: #ffffff;
+      }
+
+
+    /* ===========================
+       CAMPO DE PESQUISA
+       =========================== */
+    #search {
+        width: 20%;
+        display: flex;
+        align-items: center;
+        gap: 15px;
     }
 
-    .jconfirm .jconfirm-box .jconfirm-title {
-        font-size: 18px !important; 
-        font-weight: 500;
+    #search input {
+        width: 250px;
+        border: none;
+        background-color: transparent;
+        text-align: center;
+        outline: none;
+    }
+
+    #search input:hover {
+        border: 1px solid #5155587b;
+        background-color: #fff;
+        border-radius: 5px;
+    }
+
+    #search .icon {
+        width: 22px;
+        margin-right: 5px;
+        cursor: pointer;
+    }
+
+    /* ===========================
+       ÁREA DA CONTA (LOGIN & REGISTRO) HOME
+       =========================== */
+
+    .account{
+        display: flex;
+        width: 20%;
+        gap: 20px;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    .account a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: #1E2832;
+        background-repeat: no-repeat;
+        transition: background-image 0.3s ease-in-out;
+    }
+    
+    .account a:hover {
+        color: #FF6F61;
+    }
+    
+    
+    .account a::before {
+        content: "";
+        width: 22px; 
+        height: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: block;
+        transition: background-image 0.3s ease-in-out;
+    }
+    
+    .nav-user::before {
+        background-image: url('/public/images/login.svg');
+    }
+
+    .nav-login::before{
+        background-image: url('/public/images/login.svg');
+    }
+    
+    .nav-register::before{
+        background-image: url('/public/images/register.svg');
+    }
+
+    .nav-logout::before{
+        background-image: url('/public/images/sair.png');
+    }
+    
+    .nav-user:hover::before {
+        background-image: url('/public/images/login-hover.svg');
+    }
+
+    .nav-login:hover::before {
+        background-image: url('/public/images/login-hover.svg');
+    }
+    
+    .nav-register:hover::before {
+        background-image: url('/public/images/register-hover.svg');
+    }
+
+    .nav-logout:hover::before{
+        background-image: url('/public/images/sair-hover.png');
+    }
+
+    
+/* ===========================
+   ALERTAS E JCONFIRM MODAL
+   =========================== */
+   .jconfirm .jconfirm-box .jconfirm-title {
+    font-size: 18px !important; 
+    font-weight: 500;
     }
 
     .jconfirm .jconfirm-box .jconfirm-icon-c {
-        font-size: 18px !important; 
+        font-size: 18px !important;
     }
 
+    /* ===========================
+       LOGOUT SECTION
+       =========================== */
     .logout {
         display: flex;
         justify-content: center;
@@ -85,26 +352,122 @@ body {
         font-weight: 400;
         gap: 5px;
         margin-bottom: 50px !important;
-        margin-top: -30px;
+        margin-top: -50px;
     }
 
-    .btn-show{
+    .logout a{
+        color: #FF6F61;
+    }
+
+    /* ===========================
+       HERO SECTION
+       =========================== */
+    .hero-container {
+        width: 100%;
+        background-color: rgba(30, 40, 50, 0.05);
+        display: flex;
+        justify-content: space-around;
+        padding: 32px;
+        position: relative;
+        overflow: hidden;
+        z-index: 10;
+    }
+
+    .hero-left {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 3rem;
     }
-    
 
-    .dropdown-item:hover {
-        background-color: #FF6F61;
-        border: 1px solid #FF6F61;
-        color: #ffffff;
-      }
-
-      .btn-product-i {
+    .hero-right {
         display: flex;
-        flex-direction: row;
-        gap: 8px;
-      }
+        row-gap: 2rem;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .image-container {
+        width: 30rem;
+        height: 37rem;
+        overflow: hidden;
+        border-radius: 10rem 0rem 10rem 0;
+        border: 8px solid rgba(255, 255, 255, 0.12);
+    }
+
+    /* HERO TEXT */
+    .hero-title h1 {
+        font-family: "Roboto", serif;
+        font-weight: 300;
+        font-size: 72px;
+    }
+
+    .hero-subtitle p {
+        font-family: "Roboto", serif;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 55px;
+    }
+
+    /* HERO IMAGE DECORATION */
+    .hero-flower {
+        position: absolute; 
+        top: 0;
+        left: 0;
+        width: 103%; 
+        height: 100%; 
+        z-index: -1; 
+        align-content: center;
+        margin-top: 10px;
+    }
+
+    .hero-flower img {
+        width: 100%; 
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* ===========================
+       CARDS
+       =========================== */
+    .card {
+        border: none;
+    }
+
+    .card-img-top {
+        width: 312px;
+        height: 380px;
+    }
+
+    .card-title {
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+
+    .card-text {
+        color: #00000080;
+        font-size: 16px;
+    }
+
+    /* ===========================
+       COMPANIES
+       =========================== */
+
+   .c-container {
+        display: flex;
+        height: 70px;
+        justify-content: space-between;
+        align-items: center;
+        margin: 80px 50px 50px 50px;
+        padding: 0 20px 0 20px;
+   }
+   .c-container img{
+        width: 200px;
+        height: 70px;
+   }
+
 
     
 

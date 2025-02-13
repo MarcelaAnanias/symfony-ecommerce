@@ -7,7 +7,9 @@
     <div class="container  security-form">
 
         <div class="logo">
-            <img src="/images/logo.svg" alt="Logo">
+            <a href="/">
+                <img src="/images/logo.svg" alt="Logo">
+            </a>
         </div>
 
         <form method="post" class="login-form">
@@ -32,9 +34,10 @@
             >
 
             <br>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">
-                Sign in
+            <button class="btn btn-lg btn-primary btn-login" type="submit">
+                Login
             </button>
+            <a href="/register" class="btn btn-lg btn-primary btn-register mt-3"> Sign Up </a>
         </form>
     </div>
 {% endblock %}

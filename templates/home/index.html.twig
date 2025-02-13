@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+    <div class="hero-container">
+        <div class="hero-flower">
+            <img src="/images/flower-pattern.svg" alt="">
+        </div>
+        <div class="hero-left">
+            <div class="hero-title">
+                <h1> Collections </h1>
+            </div>
+            <div class="hero-subtitle">
+                <p> You Can Explore Ans Shop Many Differnt Collection <br> From Various Barands Here. </p>
+            </div>
+            <a href="{{ path('app_product_index') }}" class="btn-shop" > 
+                <img src="/images/shop.svg" alt="">
+                Shop New 
+            </a>
+        </div>
+        <div class="hero-right">
+            <div class="image-container">
+                <img src="/images/container.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="c-container">
+        <img src="/images/brand-1.svg" alt="">
+        <img src="/images/brand-2.svg" alt="">
+        <img src="/images/brand-3.svg" alt="">
+        <img src="/images/brand-4.svg" alt="">
+        <img src="/images/brand-5.svg" alt="">
+    </div>
+    <div class="container">
+       <br><br><h2> Or Subscribe To The Newsletter </h2><br>
+        <div class="row">
+            {% for product in products %}
+                <div class="col-md-3 mt-4">
+                    <div class="card" style="width: 18rem; ">
+                      <img src="{{ asset('uploads/images/'~product.image) }}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                            <h5 class="card-title">{{product.name}}</h5>
+                            <p class="card-text">{{product.description|slice(0, 56)}}</p>
+                            <a href="#" class="btn btn-primary btn-block" style=" width: 150px;"> Shop Now </a>
+                      </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
